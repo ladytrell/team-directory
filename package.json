@@ -1,0 +1,14 @@
+{
+  "name": "team-directory",
+  "version": "1.0.0",
+  "description": "Application to create an engineering team directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Antrell Kent",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
