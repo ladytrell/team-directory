@@ -24,27 +24,27 @@ describe('Employee class', () => {
   describe('getId', () => {
     it('return employee ID number', () => {
       const employee = new Employee('Jane Doe', '415683', 'jane.doe@company.com');
-      let name = employee.getId();
+      let id = employee.getId();
 
-      expect(name).toEqual('415683');
+      expect(id).toEqual('415683');
     });
   });
   
   describe('getEmail', () => {
     it('return employee email address', () => {
       const employee = new Employee('Jane Doe', '415683', 'jane.doe@company.com');
-      let name = employee.getEmail();
+      let email = employee.getEmail();
 
-      expect(name).toEqual('jane.doe@company.com');
+      expect(email).toEqual('jane.doe@company.com');
     });
   });
   
   describe('getRole', () => {
     it('return employee Role', () => {
       const employee = new Employee('Jane Doe', '415683', 'jane.doe@company.com');
-      let name = employee.getRole();
+      let role = employee.getRole();
 
-      expect(name).toEqual(expect.any(String));
+      expect(role).toEqual(expect.any(String));
     });
   });
   
