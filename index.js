@@ -1,8 +1,8 @@
 const Employee = require('./lib/classes/Employee');
 const Manager = require('./lib/classes/Manager');
 const Engineer = require('./lib/classes/Engineer');
-const intern = require('./lib/classes/intern');
-const { employeeQuestions, managerQuestion, githubQuestion, isInternQuestion, schoolQuestion } = require('./lib/Questions');
+const Intern = require('./lib/classes/intern');
+const { employeeQuestions, managerQuestion, githubQuestion, isInternQuestion, schoolQuestion, moreEmployeesQuestion } = require('./lib/Questions');
 const inquirer =  require('inquirer');
 
 // To Do Prompt for Employee
@@ -22,26 +22,29 @@ class teamBuilder {
 
     async teamMemberDetails () {
         console.log('Enter Employee details\n');
-        const answers = await inquirer.prompt(employeeQuestions);
-        const github = await inquirer.prompt(githubQuestions);
         const isIntern = await inquirer.prompt(isInternQuestion);
+        const answers = await inquirer.prompt(employeeQuestions);
+        const github = await inquirer.prompt(githubQuestion);
 
-        if(!isIntern){
-            const engineer = new Engineer(answers.name, answers.Id, answers.email, github);     
+        if(!isIntern.employeeType){
+            const engineer = new Engineer(answers.name, answers.Id, answers.email, github.github);   
+            console.log(engineer)  
             this.engineers.push(engineer);
         } else {
             const school = await inquirer.prompt(schoolQuestion);
-            const intern = new Engineer(answers.name, answers.Id, answers.email, github, school);     
+            const intern = new Intern(answers.name, answers.Id, answers.email, github.github, school.school);  
+            console.log(intern)       
             this.interns.push(intern);
         }
         
-        /*
-        if (addEmployee) {
+        const addEmployee = await inquirer.prompt(moreEmployeesQuestion);
+        
+        if (addEmployee.more) {
             this.teamMemberDetails ();
         } else {
             return;
         }
-        */
+        
 
     }
 
@@ -64,4 +67,5 @@ class teamBuilder {
 
 const team = new teamBuilder();
 
-team.init();
+team.teamMemberDetails();
+//team.init();
