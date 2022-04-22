@@ -37,7 +37,7 @@ class teamBuilder {
         const addEmployee = await inquirer.prompt(moreEmployeesQuestion);
         
         if (addEmployee.more) {
-            return await this.teamMemberDetails ();
+            return await this.teamMemberDetails();
         } else {
             //console.log(this);
             return;
@@ -58,7 +58,6 @@ class teamBuilder {
         console.log("Welcome to Team Builder\n");
         await this.managerDetails();
         await this.teamMemberDetails();
-        return
     }
 }
 
@@ -67,17 +66,18 @@ const team = new teamBuilder();
 team.init()
 .then(() => {
     return generatePage(team);
-}) /*
+}) 
 // Call back to write the file with html created by generatePage
 .then(data => {
-    return writeToFile('./dist/index.html', data);
+    return writeFile(data);
 })
 // Display file created if the write is successful
 .then(writeToFileResponse => {
     console.log(writeToFileResponse);
+    copyFile();
 })
 // Catches and display error message
 .catch(err => {
     console.log(err);
 })
-*/;
+;
