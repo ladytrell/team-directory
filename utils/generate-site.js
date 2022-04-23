@@ -1,8 +1,17 @@
 const fs = require('fs');
 
-//Code from Module 10 Portfolio Generate
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
+        // if dist directory does not exist, create it
+        const folderName = './dist'
+        try {
+          if (!fs.existsSync(folderName)) {
+            fs.mkdirSync(folderName)
+          }
+        } catch (err) {
+          console.error(err)
+        }
+
         fs.writeFile('./dist/index.html', fileContent, err => {
           // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
           if (err) {
