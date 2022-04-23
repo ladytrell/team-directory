@@ -1,5 +1,5 @@
 
-
+// Employee card to display in HTML skeleton
 const generateCards = (manager, engineers, interns) => {
   return `
         <div class="card flex-{grow|shrink}-0" style="max-width: 18rem;">
@@ -44,11 +44,10 @@ const generateCards = (manager, engineers, interns) => {
                   
 
 module.exports = teamData => {
-    console.log('page-template\n');
-    // destructure projects and about data from templateData based on their property key names
-    const { manager, engineers, interns } = teamData;
-   
-    return `
+  // destructure projects and about data from templateData based on their property key names
+  const { manager, engineers, interns } = teamData;
+  // HTML skeleton
+  return `
   <!DOCTYPE html>
   <html lang="en">
 
