@@ -27,6 +27,12 @@
  - Answer the series of questions to provide the details for the project's readme.
  - Open dist director view access the created README.md file
 
+  ## Demo Images
+  ![](./assets/images/demo-image.jpg/)
+  ![](./assets/images/cli-demo1.jpg/) 
+  ![](./assets/images/cli-demo2.jpg/)
+  ![](./assets/images/cli-demo3.jpg/)
+
   ## Questions
 
   GitHub: [ladytrell](https://github.com/ladytrell)
