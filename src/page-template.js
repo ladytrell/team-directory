@@ -2,21 +2,25 @@
 
 const generateCards = (manager, engineers, interns) => {
   return `
-        <div class="card text-white bg-dark flex-{grow|shrink}-0" style="max-width: 18rem;">
-          <h4 class="card-header">${manager.name} </br>  Manager</h4>      
-          <p>ID:  ${manager.id}</p>     
-          <p>Email:  <a href="mailto:${manager.email}">${manager.email}</a></p>     
-          <p>Office Number:  ${manager.officeNum}</p>
+        <div class="card flex-{grow|shrink}-0" style="max-width: 18rem;">
+          <h4 class="card-header manager text-white">${manager.name} </br>  Manager</h4>    
+          <div class="card-body">     
+            <p>ID:  ${manager.id}</p>     
+            <p>Email:  <a href="mailto:${manager.email}">${manager.email}</a></p>     
+            <p>Office Number:  ${manager.officeNum}</p>
+          </div>
         </div>
 
     ${engineers
       .map(({ name, id, email, github }) => {
         return `
-        <div class="card text-white bg-dark flex-{grow|shrink}-0" style="max-width: 18rem;">
-            <h4 class="card-header">${name}  </br> Engineer </h4>      
-            <p>ID:  ${id}</p>     
-            <p>Email:  <a href="mailto:${email}">${email}</a></p>  
-            <p><a href="https://github.com/${github}">${github}</a></p>
+        <div class="card flex-{grow|shrink}-0" style="max-width: 18rem;">
+            <h4 class="card-header engineer text-white">${name}  </br> Engineer </h4>    
+            <div class="card-body">     
+              <p>ID:  ${id}</p>     
+              <p>Email:  <a href="mailto:${email}">${email}</a></p>  
+              <p>GitHub: <a href="https://github.com/${github}">${github}</a></p>
+            </div>
          </div>
       `;})
       .join('')}
@@ -24,12 +28,14 @@ const generateCards = (manager, engineers, interns) => {
       ${interns
         .map(({ name, id, email, github, school }) => {
         return `
-        <div class="card text-white bg-dark flex-{grow|shrink}-0" style="max-width: 18rem;">
-          <h4 class="card-header">${name}  </br> Intern </h4>      
-          <p>ID:  ${id}</p>      
-          <p>Email:  <a href="mailto:${email}">${email}</a></p>  
-          <p><a href="https://github.com/${github}">${github}</a></p>
-          <p>School:  ${school}</p>
+        <div class="card flex-{grow|shrink}-0" style="max-width: 18rem;">
+          <h4 class="card-header intern text-white">${name}  </br> Intern </h4>   
+          <div class="card-body">      
+            <p>ID:  ${id}</p>      
+            <p>Email:  <a href="mailto:${email}">${email}</a></p>  
+            <p>GitHub: <a href="https://github.com/${github}">${github}</a></p>
+            <p>School:  ${school}</p>
+          </div>
         </div>
           `;})
           .join('') }
@@ -69,7 +75,7 @@ module.exports = teamData => {
       <h1 class="text-center">My Team</h1>
     </header>
     <main class="container my-5 ">
-      <div class="row d-flex flex-wrap justify-content-around">
+      <div class="card-columns d-flex flex-wrap justify-content-around">
         ${generateCards(manager, engineers, interns)}
       </div>
     </main>

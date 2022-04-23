@@ -1,72 +1,43 @@
-  body {
-    font-family: "Open Sans", sans-serif;
-  }
-    
-  header {
-    background-image: linear-gradient(to right,  rgb(120, 120, 248), navy);
-  }
-
-  /*Button style*/
-  button {
-    border-radius: 5px;
-    border-style: none;
-    background-color: rgb(194, 191, 191);
-  }
-
-  /*Search button style*/
-  #search {
-    width: 100%;
-    background-color: rgb(113, 162, 236);
-    color: white;
-  }
-  /*Weather Icon style*/
-  img {
-    height: 50px;
-    width: 50px;
-  }
-   
-  /*Weather condition list style*/
-  ul {
-    list-style-type: none;
-    padding-left: 10px;
-  }
-
-  #currentWeather {
-    padding-left: 0px;
-  }
-
-  li {
-    padding: 5px 0;
-  }
-
-  /*UVI color coding styles start*/
-  span {
-    padding: 2px 10px;
-    border-radius: 5px;
-  }
-  .green {
-    background-color: green;
-  }
-
-  .yellow {
-    background-color: yellow;
-  }
-  .orange {
-    background-color: orange;
-  }
-
-  .red {
-    background-color: red;
-  }
-  /*UVI color coding styles end*/
-
-  /*Utility Classes*/
-
-  .invisible {
-    display: none;
-  }
-
+:root {
+  --purple: rgb(92, 0, 128);
+  --lightpurple: rgb(121, 54, 148);
+  --palepurple: rgb(161, 43, 136);
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
   
-  .visible {
-    display: inline-block;
-  }
+header {
+  background-image: linear-gradient(to right,  rgb(245, 115, 245), var(--purple));
+}
+
+/*Card style*/
+.card {
+  box-shadow: 5px 5px lightgray;
+}
+
+/*Weather Icon style*/
+img {
+  height: 50px;
+  width: 50px;
+}
+ 
+/*Employee color coding styles start*/
+p {
+  padding: 2px 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+.manager {
+  background-color: var(--purple);
+}
+
+.engineer {
+   background-color: var(--lightpurple);
+}
+.intern {
+  background-color: var(--palepurple);
+}
+
+/*UVI color coding styles end*/
+
