@@ -15,7 +15,7 @@
   ## Installation
 
  - Clone or download the application repository 
-[Create README](https://github.com/ladytrell/team-directory)
+[Team Builder](https://github.com/ladytrell/team-directory)
  - Download and Install node.js if not already installed.  [node.js](https://nodejs.org/en/) for your platform:  [How to Install Node.js](https://nodejs.dev/learn/how-to-install-nodejs)
 
   ## Usage
@@ -28,6 +28,10 @@
  - Open dist director view access the created README.md file
 
   ## Demo Images
+
+https://user-images.githubusercontent.com/38196944/164940916-6dbe5acb-4928-47f6-a565-4dc4a8d6be6a.mp4
+
+
   ![](./assets/images/demo-image.jpg/)
   ![](./assets/images/cli-demo1.jpg/) 
   ![](./assets/images/cli-demo2.jpg/)
